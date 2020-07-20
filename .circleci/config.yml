@@ -24,12 +24,12 @@ workflows:
     version: 2
     test:
         jobs:
-            - job-1
+            - job-1:
                 filters:
                     branches:
                         only:
                             - /release\/.*/   #release
-                            - /feature\/.*/  /release*/
+                            - /feature\/.*/ 
                         ignore:
                             - /master
             - Hold-for-Approval:
