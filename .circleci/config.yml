@@ -3,11 +3,12 @@ jobs:
     #jobs
     job-1:
         #executors  (container, Linux, Windows and macos)
-        docker:
-            - image: alpine:3.7
+        # docker:
+        #     - image: alpine:3.7
         steps:
             - checkout
             # - run: echo "Hello World"
+            # mvn build 
     job-2:
         docker:
             - image: alpine:3.7
@@ -24,11 +25,18 @@ workflows:
     test:
         jobs:
             - job-1
+                filters:
+                    branches:
+                        only:
+                            - /release\/.*/   #release
+                            - /feature\/.*/  /release*/
+                        ignore:
+                            - /master
             - Hold-for-Approval:
                 type: approval
-                requires:
-                    - job-1
+                
             - job-2:
                 requires:
                     - Hold-for-Approval
+                   
     
