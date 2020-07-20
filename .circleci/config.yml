@@ -7,7 +7,15 @@ jobs:
             - image: alpine:3.7
         steps:
             - checkout
-            - run: echo "Hello World"
+            # - run: echo "Hello World"
+    job-2:
+        docker:
+            - image: alpine:3.7
+        steps:
+            - run: 
+                command: | 
+                    ls -a
+                    echo "Code worked"
 
         
 
@@ -16,3 +24,11 @@ workflows:
     test:
         jobs:
             - job-1
+            - Hold-for-Approval:
+                type: approval
+                requires:
+                    - job-1
+            - job-2:
+                requires:
+                    - Hold-for-Approval
+    
