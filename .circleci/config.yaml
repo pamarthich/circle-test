@@ -1,0 +1,14 @@
+version: 2
+jobs:
+    #jobs
+    job-1:
+        #executors  (container, Linux, Windows and macos)
+        docker:
+            - image: alpine:3.7
+        steps:
+            - checkout
+            - run: echo "Hello World"
+
+        
+
+# workflows:
