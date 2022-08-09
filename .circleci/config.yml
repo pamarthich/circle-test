@@ -34,16 +34,8 @@ workflows:
 
         jobs:
             - job-1
-              #filters:
-              #      branches:
-              #          only:
-              #              - /release\/.*/   #release
-              #              - /feature\/.*/ 
-              #          ignore:
-              #              - /master
             - Hold-for-Approval:
                 type: approval
-                
             - job-2:
                 requires:
                     - Hold-for-Approval
