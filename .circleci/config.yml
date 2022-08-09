@@ -23,15 +23,24 @@ jobs:
 workflows:
     version: 2
     test:
+        triggers:
+          - schedule:
+               cron: "*/5 * * * *"
+               filters:
+                 branches: 
+                    only:
+                      - master
+
+
         jobs:
-            - job-1:
-                filters:
-                    branches:
-                        only:
-                            - /release\/.*/   #release
-                            - /feature\/.*/ 
-                        ignore:
-                            - /master
+            - job-1
+              #filters:
+              #      branches:
+              #          only:
+              #              - /release\/.*/   #release
+              #              - /feature\/.*/ 
+              #          ignore:
+              #              - /master
             - Hold-for-Approval:
                 type: approval
                 
