@@ -16,7 +16,7 @@ workflows:
     test:
         triggers:
           - schedule:
-                cron: "30 9,10,11 * * *"
+                cron: "30 9,10,11,12 * * *"
                 filters:
                   branches: 
                     only:
