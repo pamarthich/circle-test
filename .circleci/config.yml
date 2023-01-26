@@ -25,6 +25,8 @@ workflows:
     test:
         jobs:
             - testjob
+        when:
+            equal: << pipeline.parameters.action >>
 #     test:
 #         triggers:
 #           - schedule:
