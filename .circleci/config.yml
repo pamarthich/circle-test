@@ -1,4 +1,13 @@
 version: 2
+parameters:
+    build_parameters:
+         repo:
+            type: string
+            default: c30m_fdk
+         branch:
+            type: string
+            default: feature
+            
 jobs:
     testjob:
         docker:
