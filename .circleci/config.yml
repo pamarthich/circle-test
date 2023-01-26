@@ -22,10 +22,11 @@ jobs:
 workflows:
     version: 2
     test:
-        jobs:
-            - testjob
         when:
             equal: << pipeline.parameters >>
+        jobs:
+            - testjob
+        
 #     test:
 #         triggers:
 #           - schedule:
