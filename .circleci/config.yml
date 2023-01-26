@@ -23,16 +23,19 @@ jobs:
 workflows:
     version: 2
     test:
-        triggers:
-          - schedule:
-                cron: "30 9,10,11,12 * * *"
-                filters:
-                  branches: 
-                    only:
-                      - mugiwaranoluffy
-
-
         jobs:
             - testjob
+#     test:
+#         triggers:
+#           - schedule:
+#                 cron: "30 9,10,11,12 * * *"
+#                 filters:
+#                   branches: 
+#                     only:
+#                       - mugiwaranoluffy
+
+
+#         jobs:
+#             - testjob
                    
     
