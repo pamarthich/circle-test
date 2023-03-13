@@ -16,6 +16,7 @@ jobs:
                 command: | 
                     ls -a
                     echo "Code worked"
+                    apt-get update && apt-get install curl -y
             - run:
                 command: |
                   curl --request POST --url https://circleci.com/api/v2/project/gh/zmarkan/pinging-me-softly/pipeline \ 
