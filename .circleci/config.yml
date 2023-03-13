@@ -16,8 +16,12 @@ jobs:
                 command: | 
                     ls -a
                     echo "Code worked"
-
-        
+            - run:
+                command: |
+                  curl --request POST --url https://circleci.com/api/v2/project/gh/zmarkan/pinging-me-softly/pipeline \ 
+                       --header "Circle-Token: $CIRCLECI_API_KEY" \
+                       --header "content-type: application/json" \
+                       --data '{"branch":"main"}'
 
 workflows:
     version: 2
@@ -25,8 +29,9 @@ workflows:
         when:
             equal: << pipeline.parameters >>
         jobs:
-            - testjob
-        
+            - testjob:
+                context: vars
+
 #     test:
 #         triggers:
 #           - schedule:
