@@ -26,8 +26,6 @@ jobs:
 workflows:
     version: 2
     test:
-        when:
-            equal: << pipeline.parameters >>
         jobs:
             - testjob:
                 context: vars
