@@ -10,7 +10,7 @@ parameters:
 jobs:
     testjob:
         docker:
-            - image: alpine:3.7
+            - image: cimg/base:2021.11
         steps:
             - run: 
                 command: | 
