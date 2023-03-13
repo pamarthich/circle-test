@@ -13,10 +13,11 @@ jobs:
             - image: cimg/base:2021.11
         steps:
             - run: 
+                name: install dependencies
                 command: | 
                     ls -a
                     echo "Code worked"
-                    sudo apt-get update && apt-get install curl -y
+                    sudo apt-get update && sudo apt-get install curl -y
             - run:
                 command: |
                   curl --request POST --url https://circleci.com/api/v2/project/gh/zmarkan/pinging-me-softly/pipeline \ 
