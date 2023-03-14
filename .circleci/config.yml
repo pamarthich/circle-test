@@ -12,6 +12,7 @@ jobs:
         docker:
             - image: cimg/base:2021.11
         steps:
+            - checkout
             - run: 
                 name: install dependencies
                 command: | 
@@ -22,6 +23,8 @@ jobs:
                     echo "Code worked"
                     echo ${myname}
                     sudo apt-get update && sudo apt-get install curl -y
+         
+                  
             - run:
                 name: Exec Variables
                 command: |
