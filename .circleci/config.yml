@@ -16,9 +16,11 @@ jobs:
                 name: install dependencies
                 command: | 
                     ls -a
-                    echo "Code worked"
-                    sudo apt-get update && sudo apt-get install curl -y
                     export myname="chandu"
+                    echo "Code worked"
+                    echo $myname
+                    sudo apt-get update && sudo apt-get install curl -y
+                    
             - run:
                 name: Trigger Linux Build
                 command: |
