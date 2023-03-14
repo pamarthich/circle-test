@@ -16,7 +16,8 @@ jobs:
                 name: install dependencies
                 command: | 
                     ls -a
-                    export myname="chandu"
+                    
+                    echo 'export myname="chandu"' >> "$BASH_ENV"
                     echo "Code worked"
                     echo $myname
                     sudo apt-get update && sudo apt-get install curl -y
