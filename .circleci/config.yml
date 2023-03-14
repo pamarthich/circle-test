@@ -22,7 +22,11 @@ jobs:
                     echo "Code worked"
                     echo ${myname}
                     sudo apt-get update && sudo apt-get install curl -y
-                    
+            - run:
+                name: Exec Variables
+                command: |
+                    bash test.sh
+                    bash read_env.sh
             - run:
                 name: Trigger Linux Build
                 command: |
