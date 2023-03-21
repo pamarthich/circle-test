@@ -1,4 +1,4 @@
 #!/bin/bash
 
-export strawhats="LUFFY"
+export strawhats="MONKEY D LUFFY"
 export beastpirates="KAIDO"
