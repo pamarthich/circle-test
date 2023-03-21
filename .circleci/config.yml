@@ -35,9 +35,9 @@ jobs:
                 command: |
                   echo "${myname}"
                   echo "${strawhats}"
-                  echo "${yonko}"
+                  echo "${beastpirates}"
                   #curl --request POST --url https://circleci.com/api/v2/project/gh/pamarthich/jyothsnatest/pipeline --header "Circle-Token: $CIRCLECI_API_KEY" --header "content-type: application/json" --data '{"branch":"main", "parameters": {"mynamingo": "'${myname}'"}}'
-                  curl --request POST --url https://circleci.com/api/v2/project/gh/pamarthich/jyothsnatest/pipeline --header "Circle-Token: $CIRCLECI_API_KEY" --header "content-type: application/json" --data '{"branch":"main", "parameters": {"mynamingo": "'$myname'", "pirateking": "'$strawhats'", "yonko": "'$beastpirates'"}}'
+                  curl --request POST --url https://circleci.com/api/v2/project/gh/pamarthich/jyothsnatest/pipeline --header "Circle-Token: $CIRCLECI_API_KEY" --header "content-type: application/json" --data '{"branch":"main", "parameters": {"mynamingo": "'${myname}'", "pirateking": "'${strawhats}'", "yonko": "'${beastpirates}'"}}'
 
 workflows:
     version: 2
